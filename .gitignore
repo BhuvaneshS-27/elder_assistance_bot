@@ -216,3 +216,79 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.bak
+
+# Audio Files
+*.wav
+*.mp3
+*.ogg
+recording.wav
+temp.wav
+
+# Model Files
+*.gguf
+*.bin
+
+# Whisper Models
+models/
+
+# Piper Models
+piper_models/
+
+# Memory / Runtime Data
+data/reminders.json
+data/shopping_list.json
+data/calendar.json
+
+# Local Configuration
+config_local.py
+.env
+
+# Python Cache
+.pytest_cache/
+.mypy_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
