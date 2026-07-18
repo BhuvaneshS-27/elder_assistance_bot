@@ -84,6 +84,31 @@ Conversation:
 
 If you do not know the answer, honestly say you are unsure instead of inventing information.
 """
+
+# ----------------------------------------
+# Intent Router
+# ----------------------------------------
+INTENT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "intent": {
+            "type": "string",
+            "enum": ["conversation", "task", "emergency"]
+        },
+        "task_category": {
+            "type": "string",
+            "enum": ["none", "time", "reminder", "shopping", "event", "news"]
+        },
+        "action": {
+            "type": "string"
+        },
+        "slots": {
+            "type": "string"
+        }
+    },
+    "required": ["intent", "task_category", "action", "slots"]
+}
+
 # -------------------------------
 # Piper
 # -------------------------------

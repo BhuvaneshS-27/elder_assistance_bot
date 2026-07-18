@@ -2,7 +2,8 @@
 
 cd D:\UserData\Desktop\Assistant\llama.cpp
 
-.\build\bin\Release\llama-server.exe -m D:\UserData\Desktop\Assistant\models\gemma\google_gemma-3-1b-it-Q4_K_M.gguf --host 127.0.0.1 --port 8081 -t 8 -c 2048
+.\build\bin\Release\llama-server.exe -m "D:\UserData\Desktop\Assistant\models\qwen2.5-1.5b-instruct-q4_k_m.gguf" --port 8081 --host 127.0.0.1 --ctx-size 2048 --threads 4 --parallel 2
+
 
 #start whisper server
 cd D:\UserData\Desktop\Assistant\whisper.cpp
