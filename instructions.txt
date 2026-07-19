@@ -2,9 +2,7 @@
 
 cd D:\UserData\Desktop\Assistant\llama.cpp
 
-.\build\bin\Release\llama-server.exe -m "D:\UserData\Desktop\Assistant\models\qwen2.5-1.5b-instruct-q4_k_m.gguf" --port 8081 --host 127.0.0.1 --ctx-size 2048 --threads 4 --parallel 2
-
-
+.\build\bin\Release\llama-server.exe -m "D:\UserData\Desktop\Assistant\models\qwen\qwen2.5-1.5b-instruct-q4_k_m.gguf" --host 127.0.0.1 --port 8081 -t 4 --parallel 2 -c 4096
 #start whisper server
 cd D:\UserData\Desktop\Assistant\whisper.cpp
 

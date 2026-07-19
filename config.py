@@ -28,9 +28,9 @@ AUDIO_FILE = "test.wav"
 # Adaptive Noise Gate
 # ------------------------------------
 
-NOISE_MULTIPLIER = 4.0
+NOISE_MULTIPLIER = 3.0
 
-MIN_VOLUME = 0.009
+MIN_VOLUME = 0.006
 
 NOISE_ALPHA = 0.98
 
@@ -97,7 +97,7 @@ INTENT_SCHEMA = {
         },
         "task_category": {
             "type": "string",
-            "enum": ["none", "time", "reminder", "shopping", "event", "news"]
+            "enum": ["none", "time", "reminder", "shopping", "event", "news", "weather"]
         },
         "action": {
             "type": "string"

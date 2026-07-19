@@ -32,6 +32,11 @@ tests = [
     "What's in the news today?",
     "Tell me today's headlines.",
 
+    # ---------- Weather ----------
+    "Do you think it will rain later?",
+    "Should I carry an umbrella today?",
+    "Is it hot outside right now?",
+
     # ---------- Emergency ----------
     "I fell down and my leg hurts.",
     "I'm having chest pain.",
@@ -47,7 +52,6 @@ tests = [
     # ---------- Conversation (novel phrasing) ----------
     "Good morning, did you sleep well?",
     "I'm bored, talk to me for a bit.",
-    "Do you think it will rain later?",
     "What's your favourite season?",
     "I miss my late husband sometimes.",
     "You're a good listener.",
@@ -81,6 +85,11 @@ tests = [
     "What's happening in the world today?",
     "Anything important going on that I should know about?",
     "Catch me up on current events.",
+
+    # ---------- Weather (novel phrasing, no "rain/umbrella/weather" keyword) ----------
+    "Do I need a jacket today?",
+    "What's it like outside?",
+    "Is it going to be sunny this weekend?",
 
     # ---------- Emergency (novel phrasing, no "help/fell/chest pain" keyword) ----------
     "Everything is spinning and I feel like I might pass out.",
