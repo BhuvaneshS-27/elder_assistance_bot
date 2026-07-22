@@ -18,6 +18,7 @@ from memory import (
 )
 from intent_router import classify_intent, close_session as close_router
 from task_dispatcher import dispatch
+import reminder_store
 
 
 # ---------------------------------
@@ -72,9 +73,24 @@ def main():
     calibrate_noise()
 
     while True:
-        success, speech_end_time = record_audio()
+        success, data = record_audio()
+
+        # ---------------------------------
+        # Due reminders fired during the
+        # listening wait — announce them,
+        # then go straight back to listening.
+        # ---------------------------------
+        if success == "reminder":
+            for reminder in data:
+                print(f"\n[REMINDER DUE] {reminder['content']}")
+                speak(f"Reminder: {reminder['content']}")
+                reminder_store.mark_notified(reminder["id"])
+            continue
+
         if not success:
             continue
+
+        speech_end_time = data
 
         # ---------------------------------
         # Speech → Text
@@ -160,8 +176,17 @@ def main():
         # (fired AFTER speaking — only overlaps with audio playback,
         # not with the router/main LLM calls, avoiding contention
         # during the latency-critical Speech End → Voice Starts window)
+        #
+        # Only run this for genuine conversation turns. Task commands
+        # ("remind me to...", "add milk to my list") are already
+        # handled by their own dedicated storage (reminders.json,
+        # shopping_list.json, etc.) — running fact extraction on them
+        # too caused one-off commands to get saved as permanent
+        # "facts" about the user (e.g. {"reminder": "take tablets in
+        # 20 seconds"} showing up in long_term_memory.json forever).
         # ---------------------------------
-        run_fact_extraction_async(text)
+        if result.get("intent") == "conversation":
+            run_fact_extraction_async(text)
 
         print("-" * 50)
 

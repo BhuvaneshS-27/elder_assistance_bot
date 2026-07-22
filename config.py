@@ -157,3 +157,16 @@ PIPER_NOISE_W = 0.6
 # -------------------------------
 
 MAX_HISTORY = 20      # 10 user + 10 assistant messages
+
+# ----------------------------------------
+# Weather
+# ----------------------------------------
+# Fixed location — this is a stationary household device, so location
+# is set once here rather than asked by voice each time.
+#
+# Defaulted to approximate Chennai, Tamil Nadu coordinates. CONFIRM
+# and update these to the actual Pi4 deployment address before relying
+# on this for real use.
+WEATHER_LATITUDE = 13.0827
+WEATHER_LONGITUDE = 80.2707
+

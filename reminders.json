@@ -1,0 +1,82 @@
+[
+  {
+    "id": "d2c72f83",
+    "content": "take tablets",
+    "due_time": "2026-07-20T20:00:00",
+    "recurrence": "none",
+    "notified": true,
+    "created_at": "2026-07-20T19:31:10.321501"
+  },
+  {
+    "id": "27ed8fdc",
+    "content": "grandson's birthday",
+    "due_time": "2026-08-20T19:31:14.678502",
+    "recurrence": "monthly",
+    "notified": false,
+    "created_at": "2026-07-20T19:31:14.699489"
+  },
+  {
+    "id": "738d5581",
+    "content": "physiotherapy session",
+    "due_time": "2026-07-27T00:00:00",
+    "recurrence": "weekly",
+    "notified": false,
+    "created_at": "2026-07-20T19:31:15.335964"
+  },
+  {
+    "id": "40bfe8a4",
+    "content": "take tablets",
+    "due_time": "2026-07-20T19:34:36.544917",
+    "recurrence": "none",
+    "notified": true,
+    "created_at": "2026-07-20T19:34:16.575141"
+  },
+  {
+    "id": "fe2c1ae0",
+    "content": "take tablets",
+    "due_time": "2026-07-21T20:00:00",
+    "recurrence": "none",
+    "notified": false,
+    "created_at": "2026-07-21T07:37:48.351589"
+  },
+  {
+    "id": "51da7dba",
+    "content": "call my daughter",
+    "due_time": "2026-07-22T09:00:00",
+    "recurrence": "none",
+    "notified": false,
+    "created_at": "2026-07-21T07:37:49.288641"
+  },
+  {
+    "id": "331ae0d6",
+    "content": "water the plants",
+    "due_time": "2026-07-21T19:00:00",
+    "recurrence": "daily",
+    "notified": false,
+    "created_at": "2026-07-21T07:37:50.157750"
+  },
+  {
+    "id": "58b2a381",
+    "content": "grandson's birthday",
+    "due_time": "2026-08-21T09:00:00",
+    "recurrence": "none",
+    "notified": false,
+    "created_at": "2026-07-21T07:37:51.056327"
+  },
+  {
+    "id": "742e41cb",
+    "content": "physiotherapy session",
+    "due_time": "2026-07-27T09:00:00",
+    "recurrence": "weekly",
+    "notified": false,
+    "created_at": "2026-07-21T07:37:51.968337"
+  },
+  {
+    "id": "e6c5bc44",
+    "content": "take tablets",
+    "due_time": "2026-07-21T07:39:26.266271",
+    "recurrence": "none",
+    "notified": false,
+    "created_at": "2026-07-21T07:39:06.299482"
+  }
+]

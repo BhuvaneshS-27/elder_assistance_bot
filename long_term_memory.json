@@ -1,3 +1,6 @@
 {
-    "name": "Ravi"
+    "name": "Ravi",
+    "doctor": "Yes",
+    "shipping_service": "FedEx",
+    "stomach_pain": "evening"
 }

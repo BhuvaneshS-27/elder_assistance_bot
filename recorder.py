@@ -7,8 +7,18 @@ import time
 from collections import deque
 
 from config import *
+import reminder_store
 
 vad = webrtcvad.Vad(VAD_MODE)
+
+# --------------------------------------------------
+# How often (in seconds) to check for due reminders
+# while waiting for speech. Kept as a time-based
+# throttle rather than checking every audio frame,
+# since frames arrive every ~20-30ms and a JSON read
+# on every single one would be wasteful.
+# --------------------------------------------------
+REMINDER_CHECK_INTERVAL = 5
 
 # --------------------------------------------------
 # Global Noise Estimate
@@ -102,6 +112,8 @@ def record_audio():
 
     speech_end_time = None
 
+    last_reminder_check = time.perf_counter()
+
     print("\nWaiting for speech...")
 
     with sd.InputStream(
@@ -177,6 +189,21 @@ def record_audio():
             # ----------------------------------------
 
             if not recording:
+
+                # ----------------------------------------
+                # Check for due reminders (throttled)
+                # ----------------------------------------
+                now_t = time.perf_counter()
+
+                if now_t - last_reminder_check >= REMINDER_CHECK_INTERVAL:
+
+                    last_reminder_check = now_t
+
+                    due = reminder_store.get_due_reminders()
+
+                    if due:
+                        print("\nReminder due!")
+                        return "reminder", due
 
                 print(
                     f"\rNoise={noise_level:.4f} | "
